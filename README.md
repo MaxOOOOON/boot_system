@@ -39,3 +39,9 @@ mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
 grub2-mkconfig -o /boot/grub2/grub.cfg  
 
 3:
+Создать папку в директории mkdir /usr/lib/dracut/modules.d/01test  
+Поместить нужные скрипты (https://gist.github.com/lalbrekht/e51b2580b47bb5a150bd1a002f16ae85/raw/80060b7b300e193c187bbcda4d8fdf0e1c066af9/gistfile1.txt и https://gist.githubusercontent.com/lalbrekht/ac45d7a6c6856baea348e64fac43faf0/raw/69598efd5c603df310097b52019dc979e2cb342d/gistfile1.txt)  
+Выполнить mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r) или  
+dracut -f -v  
+При загрузке отобразится пингвин, если в редакторе grub конфига удалить rghb и quiet в конце строки kernel
+![](https://github.com/MaxOOOOON/boot_system/blob/main/6.png)  
