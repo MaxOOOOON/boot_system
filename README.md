@@ -10,8 +10,8 @@
 Комбинация Ctrl + X  
 mount -o remount,rw /sysroot/  - добавить права на запись для /sysroot    
 chroot /sysroot  
-passwd  - изменить пароль пользователя root
-touch /.autorelabel  - необходим для SELinux context
+passwd  - изменить пароль пользователя root  
+touch /.autorelabel  - необходим для SELinux context  
 exit  
 logout  
 Если систему перезагрузить принудительно, то изменения не сохранятся.
