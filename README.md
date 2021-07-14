@@ -17,15 +17,25 @@ logout
 Если систему перезагрузить принудительно, то изменения не сохранятся.
 
 2:  
-Переименовать volume group  
-vgrename VolGroup00 OtusRoot
-https://github.com/MaxOOOOON/boot_system/blob/main/1.png
+Переименовать volume group cl_centos8  
+![](https://github.com/MaxOOOOON/boot_system/blob/main/1.png)  
+
+vgrename VolGroup00 OtusRoot  
+![](https://github.com/MaxOOOOON/boot_system/blob/main/2.png)  
 Заменить старое название на новое в следующих файлах:  
-/etc/fstab, /etc/default/grub, /boot/grub2/grub.cfg  
+/etc/fstab  
+![](https://github.com/MaxOOOOON/boot_system/blob/main/3.png)  
+
+/etc/default/grub  
+![](https://github.com/MaxOOOOON/boot_system/blob/main/4.png)  
+
+/boot/grub2/grub.cfg  
+![](https://github.com/MaxOOOOON/boot_system/blob/main/5.png)  
+
+Пересоздать initrd image
+mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
 
 выполнить для корректной загрузки
 grub2-mkconfig -o /boot/grub2/grub.cfg  
-Пересоздать initrd image
-mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
 
 3:
