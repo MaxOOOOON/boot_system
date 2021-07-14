@@ -18,7 +18,8 @@ logout
 
 2:  
 Переименовать volume group  
-vgrename VolGroup00 OtusRoot  
+vgrename VolGroup00 OtusRoot
+https://github.com/MaxOOOOON/boot_system/blob/main/1.png
 Заменить старое название на новое в следующих файлах:  
 /etc/fstab, /etc/default/grub, /boot/grub2/grub.cfg  
 
