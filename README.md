@@ -17,4 +17,14 @@ logout
 Если систему перезагрузить принудительно, то изменения не сохранятся.
 
 2:  
+Переименовать volume group  
+vgrename VolGroup00 OtusRoot  
+Заменить старое название на новое в следующих файлах:  
+/etc/fstab, /etc/default/grub, /boot/grub2/grub.cfg  
 
+выполнить для корректной загрузки
+grub2-mkconfig -o /boot/grub2/grub.cfg  
+Пересоздать initrd image
+mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
+
+3:
